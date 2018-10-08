@@ -7,7 +7,7 @@ except ImportError:
     # https://docs.djangoproject.com/en/1.10/topics/http/middleware/#upgrading-pre-django-1-10-style-middleware
     MiddlewareMixin = object
 
-from db_multitenant import utils
+from rds_db_multitenant import utils
 
 
 class MultiTenantMiddleware(MiddlewareMixin):

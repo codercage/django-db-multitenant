@@ -4,7 +4,7 @@ from importlib import import_module
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 
-from db_multitenant.mapper import TenantMapper
+from rds_db_multitenant.mapper import TenantMapper
 
 _CACHED_MAPPER = None
 
@@ -50,7 +50,7 @@ def get_mapper():
 
         if not issubclass(cls, TenantMapper):
             raise ImproperlyConfigured(
-                '%s does not subclass db_multitenant.mapper.TenantMapper', name)
+                '%s does not subclass rds_db_multitenant.mapper.TenantMapper', name)
 
         _CACHED_MAPPER = cls()
 

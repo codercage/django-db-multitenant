@@ -1,4 +1,4 @@
-from db_multitenant import mapper
+from rds_db_multitenant import mapper
 
 class TenantMapper(mapper.TenantMapper):
     def get_tenant_params(self, request):
@@ -11,4 +11,4 @@ class TenantMapper(mapper.TenantMapper):
         }
 
     def get_cache_prefix(self, request, tenant_name, db_name):
-        pass
+        return tenant_name

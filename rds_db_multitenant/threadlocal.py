@@ -1,7 +1,7 @@
 import logging
 from threading import local
 
-LOGGER = logging.getLogger('db_multitenant')
+LOGGER = logging.getLogger('rds_db_multitenant')
 
 
 class MultiTenantThreadlocal(local):

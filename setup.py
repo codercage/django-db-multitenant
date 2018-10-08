@@ -12,12 +12,12 @@ from shutil import rmtree
 from setuptools import setup, find_packages, Command
 
 # Package meta-data.
-NAME = 'django-db-multitenant'
-MODULE_NAME = 'db_multitenant'
+NAME = 'django-rds-db-multitenant'
+MODULE_NAME = 'rds_db_multitenant'
 DESCRIPTION = 'Multitenant support for Django, using one tenant per database.'
-URL = 'https://github.com/mik3y/django-db-multitenant'
-EMAIL = 'opensource@hoho.com'
-AUTHOR = 'Mike Wakerly'
+URL = 'https://github.com/codercage/django-rds-db-multitenant'
+EMAIL = 'codercage@gmail.com'
+AUTHOR = 'codercage'
 
 # What packages are required for this module to be executed?
 REQUIRED = [

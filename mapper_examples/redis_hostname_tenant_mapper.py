@@ -5,7 +5,7 @@ Redis should store a map of hostname -> tenant name.  The tenant name
 is then used to form the database and cache names.
 """
 
-from db_multitenant import mapper
+from rds_db_multitenant import mapper
 from django.http import Http404
 import redis
 

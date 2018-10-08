@@ -4,12 +4,12 @@ import time
 
 from django.core.exceptions import ImproperlyConfigured
 
-from db_multitenant.threadlocal import MultiTenantThreadlocal
-from db_multitenant.utils import update_database_from_env
+from rds_db_multitenant.threadlocal import MultiTenantThreadlocal
+from rds_db_multitenant.utils import update_database_from_env
 
 WRAPPED_BACKEND = import_module('django.db.backends.mysql.base')
 
-LOGGER = logging.getLogger('db_multitenant')
+LOGGER = logging.getLogger('rds_db_multitenant')
 
 class DatabaseWrapper(WRAPPED_BACKEND.DatabaseWrapper):
     def __init__(self, *args, **kwargs):
