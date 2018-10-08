@@ -55,6 +55,6 @@ definition, which will cause cache keys to be prefixed with the value of
       'default' : {
             'LOCATION': '127.0.0.1:11211',
             'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-            'KEY_FUNCTION': 'db_multitenant.cache.helper.multitenant_key_func'
+            'KEY_FUNCTION': 'rds_db_multitenant.cache.helper.multitenant_key_func'
         }
     }
