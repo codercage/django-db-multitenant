@@ -3,7 +3,6 @@ from threading import local
 
 LOGGER = logging.getLogger('rds_db_multitenant')
 
-
 class MultiTenantThreadlocal(local):
     """Thread-local state.  An instance of this should be attached to a
     database connection.
@@ -12,23 +11,15 @@ class MultiTenantThreadlocal(local):
     set in this class.  When a cursor is accquired on that connection,
     the database wrapper will apply the tenant name.
     """
+
     def __init__(self):
         self.reset()
 
-    def get_tenant_name(self):
-        return self.tenant_name
+    def get_tenant_params(self):
+        return self.tenant_params
 
-    def set_tenant_name(self, tenant_name):
-        self.tenant_name = tenant_name
-
-    def get_db_name(self):
-        return self.db_name
-
-    def set_db_name(self, db_name):
-        # Sanity check; this is highly simplistic; mappers should sanitize.
-        if db_name and ';' in db_name:
-            raise ValueError('Illegal database name: %s' % db_name)
-        self.db_name = db_name
+    def set_tenant_params(self, tenant_params):
+        self.tenant_params = tenant_params
 
     def set_cache_prefix(self, prefix):
         self.cache_prefix = prefix
@@ -37,6 +28,5 @@ class MultiTenantThreadlocal(local):
         return self.cache_prefix
 
     def reset(self):
-        self.tenant_name = None
-        self.db_name = None
+        self.tenant_params = None
         self.cache_prefix = None
